@@ -1,0 +1,38 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 4rem;;
+  background: #a32cc4;
+	color: white;
+}
+
+h1 {
+	text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.jumbotron,
+.header,
+.footer {
+  background:#c4c4c4;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+}
