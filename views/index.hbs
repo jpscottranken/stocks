@@ -2,24 +2,100 @@
     <h1 id="title">{{ title }}</h1>
     <div class="container">
         <div class="jumbotron  text-center">
-            <p class="lead">This is a Node.js Stock Market Application.  Just enter the name of a stock to check in the textbox above and click the &lt;enter&gt; key.  Your stock info will appear here.</p>
-            <hr class="my-4">
-            
-            <a class="btn btn-primary btn-lg  text-center" href="/about" role="button">Learn more...</a>
+            <h1>{{ stock.companyName }} ({{ stock.symbol }})</h1>
+
+			<strong>Primary Exchange:</strong> {{ stock.primaryExchange }}<br>
+			<strong>Latest Price: </strong> ${{ stock.latestPrice }}<br>
+			<strong>Previous Close: </strong> ${{ stock.previousClose }}<br>
+			<strong>52 Week Low: </strong> ${{ stock.week52Low }}<br>
+			<strong>52 Week High: </strong> ${{ stock.week52High }}<br>
+			<strong>YTD Change: </strong> {{ stock.ytdChange }}%<br>
+			<strong>Market Cap: </strong> ${{ stock.marketCap }}<br>
+
         </div>
 
         <div class="home-content">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sodales consectetur vulputate. Morbi cursus non magna vel ultricies. Quisque sit amet purus non libero fermentum rhoncus. Proin nec est sed velit commodo maximus. Etiam non eros nec risus ullamcorper ultrices. Etiam luctus accumsan augue, et hendrerit nibh commodo sed. Fusce nulla nisi, consectetur id odio quis, ullamcorper mollis metus. Maecenas pulvinar sit amet ipsum at iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur venenatis quis ligula eget luctus. Phasellus eu odio ipsum. In hac habitasse platea dictumst. Integer sollicitudin dui ac diam iaculis, at feugiat nunc dapibus. Aliquam eget metus pellentesque, imperdiet nisl eget, elementum magna.
-            </p>
+				The following is a list of 73 of the most frequently traded stocks (preceded by their symbols),
+				as provided by <a href="https://gretlcycu.files.wordpress.com/2013/08/quick-ticker-symbol-list.pdf"
+				target="_blank">Stock Market Simulation (SMS)</a>.
+			</p>
 
-            <p>
-                Quisque ut diam in lectus ullamcorper ornare. Nunc maximus ac metus ut ullamcorper. Donec id interdum turpis, nec auctor leo. Vestibulum interdum metus nec odio hendrerit, id eleifend diam dapibus. Maecenas dignissim ac ligula eu accumsan. Etiam scelerisque urna sit amet ante euismod venenatis. Fusce vel est eget ligula vulputate varius non a ex. Praesent libero urna, tincidunt et laoreet id, interdum nec libero. Cras sit amet semper risus. Phasellus a egestas augue. Nam ultrices, lorem at fermentum tristique, nisl nisl auctor ipsum, sit amet vestibulum ex lorem sagittis sapien. Morbi porta, nisi at auctor facilisis, tortor sapien accumsan felis, eget scelerisque turpis tellus nec nunc.
-            </p>
-
-            <p>
-                Mauris volutpat est eu tellus egestas, accumsan laoreet sapien malesuada. Nulla id sem est. Donec suscipit metus sed nisl consequat, semper congue lectus tempus. Maecenas finibus volutpat mauris, sed dignissim lectus venenatis ut. Duis vel sem ante. Nunc eu dui malesuada, commodo urna scelerisque, volutpat est. Nunc tristique ac justo varius rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce fermentum ultricies quam. Quisque faucibus libero a venenatis pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tristique dolor ante, vel venenatis ex blandit sit amet. Aenean nec magna neque. Vivamus quis suscipit nibh, in efficitur orci. Praesent fermentum arcu magna, in faucibus risus porta nec. In sollicitudin eros et nibh sagittis, vitae aliquet neque pulvinar.
-            </p>
-        </div>
+			<ul>
+				<li>ADBE Adobe Systems Inc.</li>
+				<li>AFL AFLAC Inc</li>
+				<li>ALL Allstate Corp</li>
+				<li>AMZN Amazon.com Inc.</li>
+				<li>AXP American Express Company</li>
+				<li>BUD Anheuser-Busch Cos</li>
+				<li>TWX AOL Time Warner</li>
+				<li>AAPL Apple Computer Inc.</li>
+				<li>APPB Applebees International Inc.</li>
+				<li>AWE AT&T Wireless Corp</li>
+				<li>BKS Barnes & Noble Inc.</li>
+				<li>BBBY Bed Bath & Beyond Inc.</li>
+				<li>BDK Black & Decker Corp</li>
+				<li>HRB Block H & R Inc.</li>
+				<li>CPB Campbell Soup Co.</li>
+				<li>COF Capital One Financial</li>
+				<li>CAT Caterpillar Inc.</li>
+				<li>COKE Coca-Cola Bottling Co.</li>
+				<li>CL Colgate-Palmolive Co.</li>
+				<li>CTB Cooper Tire & Rubber</li>
+				<li>DELL Dell Computer Corp</li>
+				<li>DDS Dillard's Inc'A'</li>
+				<li>DIS Disney Walt Co.</li>
+				<li>DG Dollar General</li>
+				<li>DLTR Dollar Tree Stores Inc.</li>
+				<li>FDX FedEx Corp</li>
+				<li>F Ford Motor Co.</li>
+				<li>FB Facebook, Inc.</li>
+				<li>FOX Fox Entertainment Group</li>
+				<li>GM General Motors Corp</li>
+				<li>GE Genl Electric</li>
+				<li>GIS Genl Mills</li>
+				<li>GR Goodrich (B.F.)</li>
+				<li>GT Goodyear Tire & Rubber Co.</li>
+				<li>GOOG Google, Inc.</li>
+				<li>HDI Harley-Davidson</li>
+				<li>HAS Hasbro Inc.</li>
+				<li>HD Home Depot Inc.</li>
+				<li>HMC Honda Motor Co. Ltd.</li>
+				<li>INTC Intel Corp</li>
+				<li>JBX Jack in the Box Inc.</li>
+				<li>KSS Kohl's Corp</li>
+				<li>KKD Krispy Kreme Doughnuts Inc.</li>
+				<li>LTR Loews Corp</li>
+				<li>MAT Mattel, Inc</li>
+				<li>MCD McDonalds Corp</li>
+				<li>MDP Meredith Corp</li>
+				<li>MER Merrill, Lynch & Co. Inc.</li>
+				<li>MET MetLife Inc.</li>
+				<li>MGM Metro-Goldwyn-Mayer Inc.</li>
+				<li>MSFT Microsoft Corp</li>
+				<li>JWN Nordstrom, Inc</li>
+				<li>PZZA Papa Johns Intl. Inc.</li>
+				<li>PSS Payless Shoesource Inc.</li>
+				<li>JCP Penny J.C. Co. Inc.</li>
+				<li>PEP Pepsico Inc.</li>
+				<li>MO Philip Morris Cosv
+				<li>RSH RadioShack Corp</li>
+				<li>SLE Sara Lee Corp</li>
+				<li>SCH Schwab(Charles)Corp</li>
+				<li>S Sears-Roebuck</li>
+				<li>SBUX Starbucks Corporation</li>
+				<li>TGT Target Corp</li>
+				<li>TXN Texas Instruments</li>
+				<li>LTD The Limited Inc.</li>
+				<li>TOM Tommy Hilfiger Corp</li>
+				<li>TM Toyota Motor Corp</li>
+				<li>VZ Verizon Communications</li>
+				<li>WAG Walgreen Company</li>
+				<li>WMT Wal-Mart Stores Inc.</li>
+				<li>WHR Whirlpool Corp</li>
+				<li>XRX Xerox Corporation</li>
+				<li>YHOO Yahoo Inc.</li>
+			</ul>
+        </div><br><br>
     </div>
 </main>

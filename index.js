@@ -14,39 +14,6 @@ const PORT = process.env.PORT || 5000;
 // use body parser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 
-/*
-// create call_api function
-//function call_api(finishedAPI, ticker) {
-	request('https://cloud.iexapis.com/stable/stock/fb/quote?token=pk_c2f1508999a74ae59bdbbdaf7d3f', 
-			{ json: true }, (err, res, body) => {
-//                request('https://cloud.iexapis.com/stable/stock/' + ticker + 
-//                '/quote?token=pk_c2f1508999a74ae59bdbbdaf7d3f', 
-//                { json: true }, (err, res, body) => {
-            if (err) {
-		    return console.log(err);
-	    }
-	
-	    if (res.statusCode === 200) {
-		    console.log(body);
-		    //finishedAPI(body);
-		};
-	});
-//};
-*/
-
-request('https://cloud.iexapis.com/stable/stock/fb/quote?token=pk_c2f1508999a74ae59bdbbdaf7d3f349f', 
-{ json: true }, 
-(err, res, body) => {
-        if (err) {
-		    return console.log(err);
-	    }
-	
-	    if (res.statusCode === 200) {
-		    console.log(body);
-		    //finishedAPI(body);
-		};
-});
-
 //  Set view engine
 app.set('view engine', 'hbs');
 
@@ -59,13 +26,23 @@ app.engine('hbs', handlebars ({
 //  Define static assets folder
 app.use(express.static('public'));
 
-//  Render Home Page
-app.get('/', (req, res) => {
-    res.render('index', {title:   'Welcome to the home page!'});
-});
+// create call_api function
+function call_api(finishedAPI, name) {
+	request('https://cloud.iexapis.com/stable/stock/' + 
+			name + '/quote?token=pk_c2f1508999a74ae59bdbbdaf7d3f349f', 
+			{ json: true }, (err, res, body) => {
+				if (err) {
+					return console.log(err);
+				}
+	
+				if (res.statusCode === 200) {
+					finishedAPI(body);
+				}
+	});
+};
 
 // Set handlebar index GET route
-/*app.get('/', function (req, res) {
+app.get('/', function (req, res) {
 	call_api(function(doneAPI) {
 			res.render('index', {
 	    	stock: doneAPI,
@@ -77,14 +54,11 @@ app.get('/', (req, res) => {
 // Set handlebar index POST route
 app.post('/', function (req, res) {
 	call_api(function(doneAPI) {
-			//console.log(doneAPI);
-			//posted_stuff = req.body.stock_ticker;
 			res.render('index', {
-	    	stock: doneAPI,
+	    	stock: doneAPI
     	});
-	}, req.body.stock_ticker);
-		
-});*/
+	}, req.body.stockName);		
+});
 
 //  Render About Page
 app.get('/about', (req, res) => {
@@ -103,4 +77,4 @@ app.get('*', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`App now running on port ${PORT}`);
-})
+});
